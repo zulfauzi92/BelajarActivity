@@ -16,22 +16,9 @@ public class ProfileActivity extends BaseFragmentHolderActivity {
     protected void initializeFragment() {
         initializeView();
 
-       // btBack.setVisibility(View.GONE);
-        //btOptionMenu.setVisibility(View.GONE);
-//        ivIcon.setImageResource(R.drawable.....);
-        //ivIcon.setVisibility(View.VISIBLE);
-        //Intent intent = getIntent();
-
         profileFragment = new ProfileFragment();
         setCurrentFragment(profileFragment, false);
-//        String email = intent.getStringExtra("email");
-//        String password = intent.getStringExtra("password");
-//
-//        TextView emailView = findViewById(R.id.email_view);
-//        TextView passwordView = findViewById(R.id.password_view);
-//
-//        emailView.setText(email);
-//        passwordView.setText(password);
+
     }
 
 

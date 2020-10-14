@@ -16,6 +16,7 @@ import pens.lab.app.belajaractivity.base.BaseFragment;
 import pens.lab.app.belajaractivity.modul.login.LoginActivity;
 import pens.lab.app.belajaractivity.modul.login.LoginContract;
 import pens.lab.app.belajaractivity.modul.login.LoginPresenter;
+import pens.lab.app.belajaractivity.modul.toDoList.ToDoListActivity;
 
 
 /**
@@ -41,6 +42,13 @@ public class ProfileFragment extends BaseFragment<ProfileActivity, ProfileContra
 
         TextView emailView = fragmentView.findViewById(R.id.email_view);
         TextView passwordView = fragmentView.findViewById(R.id.password_view);
+        Button toDoListBtn = fragmentView.findViewById(R.id.btn_todolist);
+        toDoListBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setBtnToDoListClick();
+            }
+        });
 
         emailView.setText("Email saya : " + email);
         passwordView.setText("Password saya : " + password);
@@ -48,7 +56,9 @@ public class ProfileFragment extends BaseFragment<ProfileActivity, ProfileContra
         return fragmentView;
     }
 
-
+    public void setBtnToDoListClick(){
+        mPresenter.showToDoList();
+    }
 
     @Override
     public void setPresenter(ProfileContract.Presenter presenter) {
@@ -56,9 +66,8 @@ public class ProfileFragment extends BaseFragment<ProfileActivity, ProfileContra
     }
 
     @Override
-    public void redirectToProfile() {
-
+    public void redirectToDoList() {
+        Intent intent = new Intent(activity, ToDoListActivity.class);
+        startActivity(intent);
     }
-
-
 }
